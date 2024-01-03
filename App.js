@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+import {StyleSheet, Text, View} from 'react-native';
+import CustomComponent from "./src/screens/CustomComponent";
+import FirstChallenge from "./src/screens/FirstChallenge";
+import FlatListDemo from "./src/screens/FlatListDemo";
+const App = () =>{
+  const myName = "Asit Mandal";
+  const myElement = <Text>Hello world plz subscribe</Text>
+  return(
+    <View>
+    <Text style={styles.textStyle}>Hello World! {myName}</Text>
+    <CustomComponent/>
+    <FirstChallenge/>
+    {myElement}
+     <FlatListDemo/>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  textStyle:{
+    color:"red",
+    marginTop:50
+  }
+})
+
+export default App;
